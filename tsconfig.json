@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Language & environment */
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "types": ["node"],
+
+    /* Modules — package.json has no "type": "module", so output is CommonJS */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    /* Path aliases (resolved by tsx in dev and tsc-alias after build) */
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Emit */
+    "rootDir": ".",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "removeComments": false,
+
+    /* Type checking */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": false,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "drizzle.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "example-express-ts-drizzle",
+  "version": "1.0.0",
+  "description": "Production-ready layered REST API with Node.js, Express 5, TypeScript and Drizzle ORM (PostgreSQL)",
+  "private": true,
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/server.ts",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "start": "NODE_ENV=production node dist/server.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "drizzle",
+    "postgresql",
+    "layered-architecture"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "drizzle-orm": "^0.45.3",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.11",
+    "prettier": "^3.9.9",
+    "tsc-alias": "^1.9.7",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
